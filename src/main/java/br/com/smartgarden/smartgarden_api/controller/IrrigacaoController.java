@@ -19,14 +19,23 @@ public class IrrigacaoController {
 
     @PostMapping
     public Irrigacao salvar(@RequestBody Irrigacao irrigacao) {
-
         irrigacao.setDataHora(LocalDateTime.now());
-
         return repository.save(irrigacao);
     }
 
     @GetMapping
     public List<Irrigacao> listar() {
         return repository.findAll();
+    }
+
+    @GetMapping("/status")
+    public Boolean status() {
+        Irrigacao ultima = repository.findTopByOrderByIdDesc();
+
+        if (ultima == null) {
+            return false;
+        }
+
+        return ultima.getLigada();
     }
 }

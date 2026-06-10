@@ -5,4 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface IrrigacaoRepository extends JpaRepository<Irrigacao, Long> {
 
+    Irrigacao findTopByOrderByIdDesc();
+
 }

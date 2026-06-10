@@ -51,5 +51,11 @@ Tabelas principais:
 2. Iniciar o MySQL.
 3. Criar o banco:
 
+## Integração IoT
+
+O ESP32 realiza comunicação HTTP com a API Spring Boot, enviando leituras de umidade e recebendo comandos relacionados ao sistema de irrigação.
+
+
 ```sql
 CREATE DATABASE smartgarden;
+
